@@ -1,0 +1,103 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url(/bgg.jpg) center;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    background-repeat: no-repeat;
+   
+}
+
+.keys {
+    display: flex;
+    flex: 1;
+    color: white;
+    /* min-height: 120vh; */
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 1rem auto;
+    justify-content: center;
+}
+
+.key {
+    border: .4rem solid rgb(196, 196, 240);
+    border-radius: .5rem;
+    margin: .8rem;
+    font-size: .8rem;
+    
+    padding: .5rem .6rem;
+    text-align: center;
+    align-items: center;
+    transition: all .7s ease;
+    cursor: pointer;
+    width: 30%;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+    box-shadow: 2px 4px 3px 5px rgba(91, 90, 134, 0.7);
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: rgb(238, 147, 11);
+    box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+    display: block;
+    font-size: 2.5rem;
+    color: rgb(238, 147, 11);
+}
+
+.sound {
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: aliceblue;
+}
+
+@media (min-width: 700px) {
+    .keys {
+        display: flex;
+        flex: 1;
+        color: white;
+        /* min-height: 120vh; */
+        align-items: center;
+        flex-wrap:none;
+        text-align: center;
+        margin: 10rem auto; 
+        justify-content: center;
+    }
+
+    .key {
+        border: .4rem solid rgb(196, 196, 240);
+        border-radius: .5rem;
+        margin: 1rem;
+        font-size: 1.2rem;
+        padding: 1rem .5rem;
+        text-align: center;
+        align-items: center;
+        transition: all .7s ease;
+        cursor: pointer;
+        width: 5.9rem;
+        background: rgba(0,0,0,0.4);
+        text-shadow: 0 0 .5rem black;
+        box-shadow: 2px 4px 3px 5px rgba(91, 90, 134, 0.7);
+    }
+
+    kbd {
+        display: block;
+        font-size: 2.5rem;
+    }
+    .playing {
+        transform: scale(1.1);
+        border-color: rgb(238, 147, 11);
+        box-shadow: 0 0 1rem #ffc600;
+    }
+}
