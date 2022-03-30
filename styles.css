@@ -5,7 +5,7 @@
 }
 
 html {
-    background: url(/bgg.jpg) center;
+    background: url(/keyplay/bgg.jpg) center;
     background-size: cover;
     min-height: 100%;
     min-width: 100%;
@@ -31,7 +31,7 @@ html {
     margin: .8rem;
     font-size: .8rem;
     
-    padding: .5rem .6rem;
+    padding: .3rem .5rem;
     text-align: center;
     align-items: center;
     transition: all .7s ease;
@@ -55,11 +55,19 @@ kbd {
 }
 
 .sound {
-    font-size: .9rem;
+    font-size: .7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: aliceblue;
+}
+
+h3 {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 2px 5px 5px black;
 }
 
 @media (min-width: 700px) {
@@ -99,5 +107,12 @@ kbd {
         transform: scale(1.1);
         border-color: rgb(238, 147, 11);
         box-shadow: 0 0 1rem #ffc600;
+    }
+
+    h3 {
+        color: white;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 3rem;
     }
 }
