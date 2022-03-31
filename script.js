@@ -1,13 +1,22 @@
-const keys = document.querySelectorAll(".key");
-const p = document.querySelectorAll(".key")
+
 
 function playSound(e) {
+    let keyCodes;
+    if (e.type === "click") {
+        keyCodes = e.currentTarget.dataset.key;
+        this.classList.add("playing")
+        console.log(keyCodes);
+        audio.currentTime = 0;
+        audio.play();
+    } else {
+        keyCodes = e.keyCode;
+    }
+    
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
         if(!audio) {
             return
         }
-        audio.currentTime = 0;
         audio.play();
         key.classList.add("playing")
   
@@ -17,7 +26,10 @@ function removePlaying(e) {
     this.classList.remove("playing")
 }
 
-window.addEventListener("click", playSound);
-keys.forEach(key => key.addEventListener("transitionend", removePlaying))
-window.addEventListener("keydown", playSound);
+const keys = Array.from(document.querySelectorAll(".key"));
+
+    keys.forEach(key => key.addEventListener("transitionend", removePlaying))
+    keys.forEach(key => key.addEventListener("click", playSound));
+    window.addEventListener("keydown", playSound)
+
 
