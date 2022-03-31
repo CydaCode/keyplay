@@ -2,7 +2,7 @@ const sounds = [
     'clap',
     'hihat',
     'kick',
-    'openhat',
+    'openh',
     'boom',
     'snare',
     'tom',
@@ -28,17 +28,22 @@ sounds.forEach((soundss) => {
     
 
     const keyb = document.createElement("kbd");
-    keyb.innerText = soundss
+    keyb.innerText = "J"
+
+
+    const sp = document.createElement("span")
+    sp.classList.add("sound")
+    sp.innerText = soundss
+    
     btn.appendChild(keyb);
+    btn.appendChild(sp)
     allkey.appendChild(btn)
 
     btn.addEventListener("click", () => {
         document.getElementById(soundss).play()
     })
 
-    keyletters.forEach((keyr) => {
-        return keyr
-    })
+    
 })  
 
 
