@@ -21,16 +21,18 @@ const keyletters = [
     'Y',
     'T',
 ]
+
+    
+
 const allkey = document.querySelector(".keys")
 sounds.forEach((soundss) => {
     const btn = document.createElement("div");
     btn.classList.add('key');
     
-
+   
     const keyb = document.createElement("kbd");
-    keyb.innerText = "J"
-
-
+    keyb.innerText = "►"
+    
     const sp = document.createElement("span")
     sp.classList.add("sound")
     sp.innerText = soundss
@@ -40,14 +42,19 @@ sounds.forEach((soundss) => {
     allkey.appendChild(btn)
 
     btn.addEventListener("click", () => {
+        stopSongs();
         document.getElementById(soundss).play()
     })
-
-    
 })  
 
+function stopSongs() {
+    sounds.forEach((sound) => {
+        const song = document.getElementById(sound);
 
-
+        song.pause()
+        song.currentTime = 0;
+    })
+}
 
 // function playSound(e) {
     
