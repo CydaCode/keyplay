@@ -10,24 +10,13 @@ const sounds = [
     'ride',
 ]
 
-const keyletters = [
-    'J',
-    'Q',
-    'M',
-    'P',
-    'C',
-    'O',
-    'Z',
-    'Y',
-    'T',
-]
-
     
 
 const allkey = document.querySelector(".keys")
 sounds.forEach((soundss) => {
     const btn = document.createElement("div");
     btn.classList.add('key');
+    
     
    
     const keyb = document.createElement("kbd");
@@ -44,6 +33,7 @@ sounds.forEach((soundss) => {
     btn.addEventListener("click", () => {
         stopSongs();
         document.getElementById(soundss).play()
+        btn.classList.add("playing");
     })
 })  
 
@@ -55,6 +45,17 @@ function stopSongs() {
         song.currentTime = 0;
     })
 }
+
+const btn = Array.from(document.querySelectorAll(".key"));
+
+btn.forEach(lo => lo.addEventListener("transitionend", removePlaying))
+
+function removePlaying(e) {
+        if(e.propertyName != "transform") return;
+        this.classList.remove("playing")
+    }
+
+
 
 // function playSound(e) {
     
